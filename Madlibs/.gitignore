@@ -5,6 +5,7 @@ project.lock.json
 *.pyc
 nupkg/
 
+
 .vs/Madlibs/v16/.suo
 .vs/Madlibs
 Madlibs/v16
