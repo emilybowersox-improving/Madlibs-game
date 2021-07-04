@@ -17,9 +17,6 @@ namespace Madlibs
             // 4. Make this data-driven. Store the madlibs in either json files or a database.
 
 
-            // (ultimately have story text one string with one variable where userInput goes- and split on that variable to then populate, forEach, the Storys in List<Story>)
-
-
             List<QuestionAnswer> qa = new List<QuestionAnswer> {
 
                 new QuestionAnswer { Question = "Give me a noun: ", Answer = "" },
@@ -38,8 +35,8 @@ namespace Madlibs
                 new Story { storySegment = ". For my seasoning, I put ", userInput = "input"},
                 new Story { storySegment = " on it and ate it ", userInput = "input"},
                 new Story { storySegment = ". I was so happy with it, I shared it with my friend ", userInput = "input"},
-                new Story { storySegment = ". They thought it was the best \nfood that they had ever tasted and was ", userInput = "input"},
-                new Story { storySegment = " about it.", userInput = "input"}
+                new Story { storySegment = ". They thought it was the best food that they had ever tasted and was ", userInput = "input"},
+                new Story { storySegment = " about it.", userInput = ""}
                         };
 
             Console.WriteLine("Welcome to Madlibs! The game of silly stories and twisty tales!");
@@ -59,19 +56,22 @@ namespace Madlibs
             }
 
 
+            foreach (Story i in completeStory)
+            {
+                Console.Write(i.storySegment + i.userInput);
+            }
+            
 
-            Console.WriteLine($"\nMy Last Meal, \nby You. \n\nFor my last meal, I ate a {completeStory[0].userInput}. It was {qa[1].Answer}. For my seasoning, I put {qa[2].Answer} on it and ate it {qa[3].Answer}. " +
-                $"\nI was so happy with it, I shared it with my friend {qa[4].Answer}. They thought it was the best \nfood that they had ever tasted and was {qa[5].Answer} about it.");
             Console.ReadLine();
-
             Console.WriteLine("Hope you enjoyed your story! Press enter to finish the game");
             Console.ReadLine();
-        }
+
 
 
 
         }
     }
+}
 
 
 
